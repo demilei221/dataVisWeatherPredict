@@ -1,0 +1,28 @@
+
+<html>
+    <head>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([['Names', 'Ratings'],['Fireworks Gallery, University Village', 4.1],['Fireworks Gallery, Westlake Center', 4.5],["Simple Seattle", 4.7],['Alair Gift Shop', 4.9], ['Seattle Shirt Company', 4.5],["The Seattle Shop at 56", 4.6],['Seattle Shirt Comany Pier 55', 4.4],["Pike Place Gifts", 4.5],["Made In Washington", 4.4],['The Pacific Northwest Shop', 4.9],['Westlake Center', 4],['Archie Mcphee', 4.7],['Spacebase Gift Shop Ap The Space Needle', 4.5],['Agate Designs', 4.9],['Seattle Hats', 4],['Ugly Baby', 4.8],["Union Cigar Society", 4.8],['Gift Shop Seattle', 4.7],['Magic House Toys', 4.3]]);
+          var options = {
+            chart: {
+              title: 'Shops in Seattle Airport',
+              subtitle: 'Names and Ratings',
+            },
+            bars: 'horizontal', 
+    
+          };
+          var ratings = new google.charts.Bar(document.getElementById('ratings'));
+          ratings.draw(data, google.charts.Bar.convertOptions(options));
+  
+        }
+      </script>
+    </head>
+    <body>
+      <div id="ratings" style="width: 900px; height: 500px;"></div>
+    </body>
+  </html>

@@ -1,0 +1,37 @@
+<!-- Documents/Data Visualization/Final project/place_search_result_Emmonak.csv -->
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script type="text/javascript" src="Documents/Data Visualization/Final project/place_search_result_Emmonak.json"></script> -->
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var total = google.visualization.arrayToDataTable([
+        ["Fireworks Gallery, University Village","Fireworks Gallery, Westlake Center", "Simple Seattle", 'Alair Gift Shop', 'Seattle Shirt Company', "The Seattle Shop at 56",
+        'Seattle Shirt Comany Pier 55', "Pike Place Gifts",  "Made In Washington", 
+        'The Pacific Northwest Shop', 'Westlake Center', 'Archie Mcphee', 
+        'Spacebase Gift Shop Ap The Space Needle', 
+        'Agate Designs', 'Seattle Hats', 'Ugly Baby', "Union Cigar Society", 'Gift Shop Seattle', 'Magic House Toys'
+        ],
+        [ 97, 168, 211, 79, 200, 71, 28, 8, 98, 20, 4821, 996, 33, 92, 5, 64, 51, 9, 389],
+      ]);
+
+        var totalOptions = {
+        width: 3000,
+        height: 800,
+        legend: { position: 'top'},
+        bar: { groupWidth: '50%' },
+        bars: 'horizontal'
+      };
+        var totalID = new google.charts.Bar(document.getElementById('total'));
+        totalID.draw(total, google.charts.Bar.convertOptions(totalOptions));
+    }
+    </script>
+  </head>
+  <body>
+   
+    <div id="total" style="width: 900px; height: 100px;"></div>
+  </body>
+</html>
